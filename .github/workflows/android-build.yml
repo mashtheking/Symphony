@@ -2,8 +2,10 @@ name: Build & Upload APK
 
 on:
   push:
-    tags:
-      - 'v4.3.3'
+    branches:
+      - main
+      - master
+      - dev
   workflow_dispatch:
 
 jobs:
@@ -29,5 +31,5 @@ jobs:
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Symphony-4.3.3-debug-apk
+          name: Symphony-debug-apk
           path: app/build/outputs/apk/debug/app-debug.apk
