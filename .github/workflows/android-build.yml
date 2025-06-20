@@ -20,11 +20,11 @@ jobs:
           distribution: 'temurin'
           java-version: 17
 
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
       - name: Upgrade Gradle wrapper to 7.5
         run: ./gradlew wrapper --gradle-version 7.5
-
-      - name: Grant execute permission to gradlew
-        run: chmod +x ./gradlew
 
       - name: Build debug APK
         run: ./gradlew assembleDebug
